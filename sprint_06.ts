@@ -34,12 +34,17 @@ document.querySelector(".b-3").addEventListener("click", (): void => {
 // Создайте массив ar_4 состоящий из чисел. Заполните значениями самостоятельно. Напишите функцию f04,
 // которая принимает массив как аргумент, и возвращает сумму элементов массива. Тип данных функции напишите самостоятельно.
 
-// const ar_4
+const ar_4: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// тут создаете f04 стрелочную!!!
+const f04 = (arr: number[]): number => {
+  let sum = arr.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  });
+  return sum;
+};
 
 document.querySelector(".b-4").addEventListener("click", (): void => {
-  // document.querySelector('.out-4').textContent = String(f04(ar_4));
+  document.querySelector(".out-4").textContent = String(f04(ar_4));
 });
 
 // Task 05
@@ -49,19 +54,33 @@ const ar_5: number[] = [];
 ar_5[2] = 333;
 ar_5[4] = 777;
 
-// тут создаете f05 стрелочную!!!
+const f05 = (): void => {
+  let out = "";
+  for (let i = 0; i < ar_5.length; i++) {
+    out += `${ar_5[i]}-`;
+  }
+  document.querySelector(".out-5").textContent = out.slice(0, -1);
+};
 
-// document.querySelector('.b-5').addEventListener('click', f05);
+document.querySelector(".b-5").addEventListener("click", f05);
 
 // Task 06
 // Напишите функцию, f06, которая создает массив состоящий только из чисел массива ar_06 и возвращает его.
 
 const ar_06: (number | boolean)[] = [1, false, 2, true, 5, false];
 
-// тут создаете f06 стрелочную!!!
+const f06 = (): number[] => {
+  let res: number[] = [];
+  for (let i = 0; i < ar_06.length; i++) {
+    if (typeof ar_06[i] === "number") {
+      res.push(Number(ar_06[i]));
+    }
+  }
+  return res;
+};
 
 document.querySelector(".b-6").addEventListener("click", (): void => {
-  // document.querySelector('.out-6').textContent = f06().join('=');
+  document.querySelector(".out-6").textContent = f06().join("=");
 });
 
 // Task 07
