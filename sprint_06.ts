@@ -196,9 +196,23 @@ const ar13: number[][] = [
   [1, 0, 1],
 ];
 
-// тут создаете f13 стрелочную!!!
+const f13 = (): void => {
+  let out = "";
+  for (let i = 0; i < ar13.length; i++) {
+    for (let k = 0; k < ar13[i].length; k++) {
+      if (ar13[i][k] == 0) {
+        ar13[i][k] = 1;
+      } else {
+        ar13[i][k] = 0;
+      }
+      out += ar13[i][k] + " ";
+    }
+    out += "<br>";
+  }
+  document.querySelector(".out-13").innerHTML = out;
+};
 
-// document.querySelector('.b-13').addEventListener('click', f13);
+document.querySelector(".b-13").addEventListener("click", f13);
 
 // Task 14
 // Создайте кортеж k14 тип данных string, string и заполните его 'type', 'script'. Для проверки выведите в консоль.
