@@ -131,12 +131,25 @@ document.querySelector(".b-9").addEventListener("click", (): void => {
 // Создайте функцию, которая принимает массив ar10 и возвращает два массива, первый из которых содержит только четные числа
 // из исходного массива, а второй только нечетные числа.
 
-// тут создаете f10 стрелочную!!!
+const f10 = (arr: number[]): number[][] => {
+  let temp: number[][] = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 == 0) {
+      temp.push([]);
+      temp[0].push(Number(arr[i]));
+    } else {
+      temp.push([]);
+      temp[1].push(Number(arr[i]));
+    }
+  }
+  return temp;
+};
 
 document.querySelector(".b-10").addEventListener("click", (): void => {
-  // const ar_10 : number[] = [22, 33, 44, 55, 66, 66, 88, 77];
-  // document.querySelector('.out-101').textContent = f10(ar_10)[0].join('_');
-  // document.querySelector('.out-102').textContent = f10(ar_10)[1].join('_');
+  const ar_10: number[] = [22, 33, 44, 55, 66, 66, 88, 77];
+  document.querySelector(".out-101").textContent = f10(ar_10)[0].join("_");
+  document.querySelector(".out-102").textContent = f10(ar_10)[1].join("_");
 });
 
 // Task 11
@@ -145,9 +158,14 @@ document.querySelector(".b-10").addEventListener("click", (): void => {
 
 const ar11: number[] = [1, 0, 0, 0, 0];
 
-// тут создаете f11 стрелочную!!!
+const f11 = (): void => {
+  let res: (string | number)[] = ar11.map((el) => {
+    return el == 1 ? "X" : el;
+  });
+  document.querySelector(".out-11").textContent = res.join(" ");
+};
 
-// document.querySelector('.b-11').addEventListener('click', f11);
+document.querySelector(".b-11").addEventListener("click", f11);
 
 // Task 12
 // Создайте функцию, которая выводит в .out-12 одномерный массив ar_12. Если в массиве встречается число 1,
@@ -158,9 +176,15 @@ const ar11: number[] = [1, 0, 0, 0, 0];
 const ar12: number[] = [1, 0, 0, 0, 0];
 let count: number = 0;
 
-// тут создаете f12 стрелочную!!!
+const f12 = (): void => {
+  let res: (string | number)[] = ar12.map((el, index) => {
+    return index == count ? "X" : 0;
+  });
+  count++;
+  document.querySelector(".out-12").textContent = res.join(" ");
+};
 
-// document.querySelector('.b-12').addEventListener('click', f12);
+document.querySelector(".b-12").addEventListener("click", f12);
 
 // Task 13
 //  Создайте функцию которая в массиве ar13 заменяет числа 1 на 0, а 0 на 1. Выводит массив на страницу,
