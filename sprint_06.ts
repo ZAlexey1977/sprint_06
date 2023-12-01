@@ -86,26 +86,45 @@ document.querySelector(".b-6").addEventListener("click", (): void => {
 // Task 07
 // Создайте readonly массив ar_07 содержащий всего два значения true, false. Тип задайте самостоятельно. Выведите массив в консоль.
 
-// const ar_07
+const ar_07: readonly boolean[] = [true, false];
+console.log(ar_07);
 
 // Task 08
 // Создайте функцию, которая читает число из input.i-8 и если число четное, то делает его push в массив ar_08,
 // если не четное то unshift в массив. Массив создайте глобально по отношению к функции.
 // Результат - выводите в .out-8, разделитель - подчеркивание.
 
-// const ar_08
+const ar_08: number[] = [];
 
-// тут создаете f08 стрелочную!!!
+const f08 = (): void => {
+  let input = <HTMLInputElement>document.querySelector(".i-8");
 
-// document.querySelector('.b-8').addEventListener('click', f08);
+  Number(input.value) % 2 == 0
+    ? ar_08.push(Number(input.value))
+    : ar_08.unshift(Number(input.value));
+
+  document.querySelector(".out-8").textContent = ar_08.join("_");
+};
+
+document.querySelector(".b-8").addEventListener("click", f08);
 
 // Task 09
 // Создайте функцию, которая принимает целое число n как аргумент и возвращает массив длиной n наполненный случайными числами от 0 до 10.
 
-// тут создаете f09 стрелочную!!!
+const f09 = (n: number): number[] => {
+  let num = (): number => {
+    return Math.round(Math.random() * 10);
+  };
+
+  let arr: number[] = [];
+  for (let i = 0; i < n; i++) {
+    arr.push(num());
+  }
+  return arr;
+};
 
 document.querySelector(".b-9").addEventListener("click", (): void => {
-  // document.querySelector('.out-9').textContent = f09(4).join('_');
+  document.querySelector(".out-9").textContent = f09(4).join("_");
 });
 
 // Task 10
