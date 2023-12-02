@@ -17,7 +17,7 @@ document.querySelector(".out-2").textContent = ar_2.join("_");
 
 const ar_3: string[] = ["Hello", "Hi", "Trust"];
 
-const f03 = (arr: string[]) => {
+const f03 = (arr: string[]): string[] => {
   let res = arr.filter((el: string) => {
     if (el.length >= 4) {
       return el;
@@ -39,7 +39,7 @@ const ar_4: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const f04 = (arr: number[]): number => {
   let sum = arr.reduce((accumulator, currentValue) => {
     return accumulator + currentValue;
-  });
+  }, 0);
   return sum;
 };
 
@@ -247,9 +247,14 @@ document.querySelector(".b-16").addEventListener("click", f16);
 
 let k17: [...number[]] = [2, 2, 3, 4];
 
-// тут создаете f17 стрелочную!!!
+const f17 = (): void => {
+  let sum: number = k17.reduce((el, akkum) => {
+    return akkum + el;
+  }, 0);
+  document.querySelector(".out-17").textContent = String(sum);
+};
 
-// document.querySelector('.b-17').addEventListener('click', f17);
+document.querySelector(".b-17").addEventListener("click", f17);
 
 // Task 18
 // Создан кортеж k18 readonly тип boolean, содержащий элемент true, false. Напишите функцию f18,
@@ -257,9 +262,11 @@ let k17: [...number[]] = [2, 2, 3, 4];
 
 let k18: readonly [boolean, boolean] = [true, false];
 
-// тут создаете f18 стрелочную!!!
+const f18 = (): void => {
+  document.querySelector(".out-18").textContent = k18.join(" ");
+};
 
-// document.querySelector('.b-18').addEventListener('click', f18);
+document.querySelector(".b-18").addEventListener("click", f18);
 
 // Task 19
 // Создан кортеж k19 readonly тип boolean, содержащий элемент true, false. Напишите функцию f19,
@@ -267,11 +274,14 @@ let k18: readonly [boolean, boolean] = [true, false];
 
 let k19: readonly [boolean, boolean] = [true, false];
 
-// тут создаете f19 стрелочную!!!
+const f19 = (): void => {
+  document.querySelector(".out-19").textContent = String(k19.length);
+};
 
-// document.querySelector('.b-19').addEventListener('click', f19);
+document.querySelector(".b-19").addEventListener("click", f19);
 
 // Task 20
 // Создайте кортеж k20, содержащий массив чисел [2, 3]. Выведите в консоль.
 
-// const k20
+const k20: [number, number] = [2, 3];
+console.log(k20);

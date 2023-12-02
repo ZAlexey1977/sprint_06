@@ -30,7 +30,7 @@ const ar_4 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const f04 = (arr) => {
     let sum = arr.reduce((accumulator, currentValue) => {
         return accumulator + currentValue;
-    });
+    }, 0);
     return sum;
 };
 document.querySelector(".b-4").addEventListener("click", () => {
@@ -192,21 +192,31 @@ document.querySelector(".b-16").addEventListener("click", f16);
 // Создан кортеж k17. Напишите функцию, которая выводит в .out-17 сумму элементов кортежа.
 //Обратите внимание - количество элементов кортежа при проверке может меняться.
 let k17 = [2, 2, 3, 4];
-// тут создаете f17 стрелочную!!!
-// document.querySelector('.b-17').addEventListener('click', f17);
+const f17 = () => {
+    let sum = k17.reduce((el, akkum) => {
+        return akkum + el;
+    }, 0);
+    document.querySelector(".out-17").textContent = String(sum);
+};
+document.querySelector(".b-17").addEventListener("click", f17);
 // Task 18
 // Создан кортеж k18 readonly тип boolean, содержащий элемент true, false. Напишите функцию f18,
 // которая выводит в .out-18 значения кортежа через пробел. Кортеж объявлен глобально по отношению к функции.
 let k18 = [true, false];
-// тут создаете f18 стрелочную!!!
-// document.querySelector('.b-18').addEventListener('click', f18);
+const f18 = () => {
+    document.querySelector(".out-18").textContent = k18.join(" ");
+};
+document.querySelector(".b-18").addEventListener("click", f18);
 // Task 19
 // Создан кортеж k19 readonly тип boolean, содержащий элемент true, false. Напишите функцию f19,
 // которая выводит в .out-19 длину кортежа. Кортеж объявлен глобально по отношению к функции.
 let k19 = [true, false];
-// тут создаете f19 стрелочную!!!
-// document.querySelector('.b-19').addEventListener('click', f19);
+const f19 = () => {
+    document.querySelector(".out-19").textContent = String(k19.length);
+};
+document.querySelector(".b-19").addEventListener("click", f19);
 // Task 20
 // Создайте кортеж k20, содержащий массив чисел [2, 3]. Выведите в консоль.
-// const k20
+const k20 = [2, 3];
+console.log(k20);
 //# sourceMappingURL=sprint_06.js.map
